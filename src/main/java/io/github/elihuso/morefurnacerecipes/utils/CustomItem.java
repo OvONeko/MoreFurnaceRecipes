@@ -94,12 +94,4 @@ public class CustomItem implements ConfigurationSerializable {
     public Material getToMaterial() {
         return Material.getMaterial(to);
     }
-
-    public ItemStack getFromItem() {
-        return new ItemStack(getFromMaterial());
-    }
-
-    public ItemStack getToItem() {
-        return new ItemStack(getToMaterial());
-    }
 }

@@ -6,7 +6,6 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ConfigManager {
     private final FileConfiguration config;
@@ -28,6 +27,8 @@ public class ConfigManager {
     public CustomItem[] Custom() {
         // qyl27: Bad type challenge but may work.
         List<CustomItem> customItems = (List<CustomItem>) config.getList("custom", new ArrayList<CustomItem>());
+        if (customItems.isEmpty())
+            return null;
         return customItems.toArray(CustomItem[]::new);
     }
 }
