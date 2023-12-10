@@ -1,14 +1,21 @@
 package io.github.elihuso.morefurnacerecipes;
 
 import io.github.elihuso.morefurnacerecipes.config.ConfigManager;
+import io.github.elihuso.morefurnacerecipes.utils.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.inventory.FurnaceRecipe;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MoreFurnaceRecipes extends JavaPlugin {
-    ConfigManager config = new ConfigManager(this);
+    static {
+        ConfigurationSerialization.registerClass(CustomItem.class);
+    }
+
+    private final ConfigManager config = new ConfigManager(this);
+
     @Override
     public void onEnable() {
         // Plugin startup logic

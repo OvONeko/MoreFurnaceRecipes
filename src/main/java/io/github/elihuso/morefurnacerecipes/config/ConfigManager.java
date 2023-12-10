@@ -26,26 +26,8 @@ public class ConfigManager {
     }
 
     public CustomItem[] Custom() {
-        List<Map<?, ?>> maps = config.getMapList("custom");
-        ArrayList<CustomItem> customItems = new ArrayList<>();
-        if ((maps == null) || (maps.isEmpty()))
-            return null;
-        for (var v : maps) {
-            if (!(v.containsKey("from") && v.containsKey("to")))
-                return null;
-            if (!((v.get("from") instanceof String) && (v.get("to") instanceof String)))
-                return null;
-            String from = (String) v.get("from");
-            String to = (String) v.get("to");
-            if ((v.containsKey("experience") && v.containsKey("time"))) {
-                double experience = (double) v.get("experience");
-                int time = (int) v.get("time");
-                customItems.add(new CustomItem(from, to, experience, time));
-            }
-            else {
-                customItems.add(new CustomItem(from, to));
-            }
-        }
-        return customItems.toArray(new CustomItem[customItems.size()]);
+        // qyl27: Bad type challenge but may work.
+        List<CustomItem> customItems = (List<CustomItem>) config.getList("custom", new ArrayList<CustomItem>());
+        return customItems.toArray(CustomItem[]::new);
     }
 }

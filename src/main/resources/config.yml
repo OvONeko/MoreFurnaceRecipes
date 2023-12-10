@@ -1,2 +1,22 @@
 experience: 6.3
 time: 1600
+
+custom:
+  -
+    ==: io.github.elihuso.morefurnacerecipes.utils.CustomItem
+    from: RAW_IRON_BLOCK
+    to: IRON_BLOCK
+    experience: 6.3
+    time: 1600
+  -
+    ==: io.github.elihuso.morefurnacerecipes.utils.CustomItem
+    from: RAW_GOLD_BLOCK
+    to: GOLD_BLOCK
+    experience: 6.3
+    time: 1600
+  -
+    ==: io.github.elihuso.morefurnacerecipes.utils.CustomItem
+    from: RAW_COPPER_BLOCK
+    to: COPPER_BLOCK
+    experience: 6.3
+    time: 1600
