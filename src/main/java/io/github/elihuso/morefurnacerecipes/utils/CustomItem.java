@@ -39,7 +39,7 @@ public class CustomItem implements ConfigurationSerializable {
         }
 
         from = (String) objFrom;
-        to = (String) objFrom;
+        to = (String) objTo;
 
         var valueExperience = 0.7;
         if (config.containsKey("experience")) {
