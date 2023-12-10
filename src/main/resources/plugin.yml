@@ -1,0 +1,5 @@
+name: MoreFurnaceRecipes
+version: '${version}'
+main: io.github.elihuso.morefurnacerecipes.MoreFurnaceRecipes
+api-version: '1.17'
+author: Elihuso
