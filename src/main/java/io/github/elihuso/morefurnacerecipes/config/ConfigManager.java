@@ -24,6 +24,10 @@ public class ConfigManager {
         return config.getInt("time", 1600);
     }
 
+    public boolean AddDefault() {
+        return config.getBoolean("addDefault", false);
+    }
+
     public CustomItem[] Custom() {
         // qyl27: Bad type challenge but may work.
         List<CustomItem> customItems = (List<CustomItem>) config.getList("custom", new ArrayList<CustomItem>());

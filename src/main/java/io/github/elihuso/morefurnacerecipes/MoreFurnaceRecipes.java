@@ -21,6 +21,11 @@ public final class MoreFurnaceRecipes extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        if (config.AddDefault()) {
+            addRecipe(Material.RAW_IRON_BLOCK, Material.IRON_BLOCK, config.Experience(), config.Time());
+            addRecipe(Material.RAW_GOLD_BLOCK, Material.GOLD_BLOCK, config.Experience(), config.Time());
+            addRecipe(Material.RAW_COPPER_BLOCK, Material.COPPER_BLOCK, config.Experience(), config.Time());
+        }
         CustomItem[] custom = config.Custom();
         if (custom != null) {
             for (var v : custom) {
