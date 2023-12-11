@@ -28,6 +28,10 @@ public class ConfigManager {
         return config.getBoolean("addDefault", false);
     }
 
+    public boolean AllowBlast() {
+        return config.getBoolean("allowBlast", true);
+    }
+
     public CustomItem[] Custom() {
         // qyl27: Bad type challenge but may work.
         List<CustomItem> customItems = (List<CustomItem>) config.getList("custom", new ArrayList<CustomItem>());

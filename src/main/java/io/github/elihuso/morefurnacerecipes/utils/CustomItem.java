@@ -12,12 +12,14 @@ public class CustomItem implements ConfigurationSerializable {
     private final String to;
     private final double experience;
     private final int time;
+    private final boolean allowBlast;
 
-    public CustomItem(String from, String to, double experience, int time) {
+    public CustomItem(String from, String to, double experience, int time, boolean allowBlast) {
         this.from = from;
         this.to = to;
         this.experience = experience;
         this.time = time;
+        this.allowBlast = allowBlast;
     }
 
     public CustomItem(String from, String to) {
@@ -25,6 +27,7 @@ public class CustomItem implements ConfigurationSerializable {
         this.to = to;
         this.experience = 0.7;
         this.time = 200;
+        this.allowBlast = false;
     }
 
     public CustomItem(Map<String, Object> config) {
@@ -57,8 +60,17 @@ public class CustomItem implements ConfigurationSerializable {
             }
         }
 
+        boolean valueAllowBlast = false;
+        if (config.containsKey("allowBlast")) {
+            var objAllowBlast = config.get("allowBlast");
+            if (objAllowBlast instanceof Boolean) {
+                valueAllowBlast = (Boolean) objAllowBlast;
+            }
+        }
+
         experience = valueExperience;
         time = valueTime;
+        allowBlast = valueAllowBlast;
     }
 
     @Override
@@ -68,6 +80,7 @@ public class CustomItem implements ConfigurationSerializable {
         map.put("to", to);
         map.put("experience", experience);
         map.put("time", time);
+        map.put("allowBlast", allowBlast);
         return map;
     }
 
@@ -85,6 +98,10 @@ public class CustomItem implements ConfigurationSerializable {
 
     public int getTime() {
         return time;
+    }
+
+    public boolean isAllowBlast() {
+        return allowBlast;
     }
 
     public Material getFromMaterial() {
