@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.MoreFurnaceRecipes.main.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.MoreFurnaceRecipes.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MoreFurnaceRecipes.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MoreFurnaceRecipes.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.github.elihuso.MoreFurnaceRecipes.main.iml" filepath="$PROJECT_DIR$/.idea/modules/io.github.elihuso.MoreFurnaceRecipes.main.iml" />
     </modules>
